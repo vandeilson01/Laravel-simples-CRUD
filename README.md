@@ -69,8 +69,9 @@
 
 *php artisan seed:db*
 
-**Para rodar o projeto use o comando:**
-
+<h2 align="center"> 
+	**Para rodar o projeto use o comando:**
+</h2>
 
 *php artisan serve*
 
