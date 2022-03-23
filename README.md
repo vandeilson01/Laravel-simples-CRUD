@@ -13,7 +13,7 @@
 **Baixa projeto por GIT**
 
 ```
-$ git init*
+$ git init
 
 $ git remote add origin https://github.com/vandeilson01/amar_assist.git
 
