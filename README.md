@@ -32,19 +32,19 @@
 *php composer install*
 
 
-#Para a atualização das pastas do composer também pode-se utilizar os comandos:#
+**Para a atualização das pastas do composer também pode-se utilizar os comandos:**
 
 
 *php composer install OU composer dump-autoload*
 
 
-#Para a iniciação e configuração do arquivo de configuração .env e chave do projeto use os comandos:#
+**Para a iniciação e configuração do arquivo de configuração .env e chave do projeto use os comandos:**
 
 
 *cp .env.example .env E php artisan key:generate*
 
 
-#Ainda no arquivo .env configure a conexão no seu banco de dados local:#
+**Ainda no arquivo .env configure a conexão no seu banco de dados local:**
 
 
 *DB_CONNECTION=mysql*
@@ -61,10 +61,10 @@
 
 
 
-#Na raiz esta o a tabela do banco de dados(data_users.sql) onde você pode gerar a tabela do projeto por importação em seu banco de dados.#
+**Na raiz esta o a tabela do banco de dados(data_users.sql) onde você pode gerar a tabela do projeto por importação em seu banco de dados.**
 
 
-#Caso queira gerar valores fictícios na tabela use o comando:#
+**Caso queira gerar valores fictícios na tabela use o comando:**
 
 
 *php artisan seed:db*
