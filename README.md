@@ -24,7 +24,7 @@ $ git pull origin master
 
 
 
-#instalação do composer no projeto:
+**instalação do composer no projeto:**
 
 ```
 $ php composer install
