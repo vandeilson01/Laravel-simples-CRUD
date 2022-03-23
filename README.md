@@ -1,5 +1,5 @@
 <h1 align="center"> 
-	🚧  Crud 🚀 Consluído!  🚧
+	🚧  Crud 🚀 Concluído!  🚧
 </h1>
 
 
