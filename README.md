@@ -1,4 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fitbackyard.com%2Fhow-to-protect-image-from-public-view-in-laravel-5%2F&psig=AOvVaw2QSs9J6JnloWAZC3KxnHIu&ust=1648130050136000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNjs4rqw3PYCFQAAAAAdAAAAABAD" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
