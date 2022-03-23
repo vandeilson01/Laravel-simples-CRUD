@@ -14,6 +14,15 @@
 
 ## 🛠️ Abrir e rodar o projeto
 
+#Baixa projeto por GIT
+
+*git init*
+
+*git remote add origin https://github.com/vandeilson01/amar_assist.git*
+
+*git pull origin master*
+
+
 **Siga as instruções abaixo para execução.**
 
 Opa, como vai ? :)
