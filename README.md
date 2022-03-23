@@ -29,35 +29,35 @@
 #instalação do composer no projeto:
 
 
-*php composer install
+*php composer install*
 
 
 #Para a atualização das pastas do composer também pode-se utilizar os comandos:
 
 
-*php composer install OU composer dump-autoload
+*php composer install OU composer dump-autoload*
 
 
 #Para a iniciação e configuração do arquivo de configuração .env e chave do projeto use os comandos:
 
 
-*cp .env.example .env E php artisan key:generate
+*cp .env.example .env E php artisan key:generate*
 
 
 #Ainda no arquivo .env configure a conexão no seu banco de dados local:
 
 
-*DB_CONNECTION=mysql
+*DB_CONNECTION=mysql*
 
-*DB_HOST=localhost
+*DB_HOST=localhost*
 
-*DB_PORT=3306
+*DB_PORT=3306*
 
-*DB_DATABASE=data_base
+*DB_DATABASE=data_base*
 
-*DB_USERNAME=root
+*DB_USERNAME=root*
 
-*DB_PASSWORD=
+*DB_PASSWORD=*
 
 
 
@@ -67,7 +67,7 @@
 #Caso queira gerar valores fictícios na tabela use o comando:
 
 
-*php artisan seed:db
+*php artisan seed:db*
 
 
 
