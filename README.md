@@ -34,7 +34,8 @@ $ php composer install
 **Para a atualização das pastas do composer também pode-se utilizar os comandos:**
 
 ```
-$ php composer install OU composer dump-autoload
+$ php composer install 
+$ composer dump-autoload
 ```
 
 **Para a iniciação e configuração do arquivo de configuração .env e chave do projeto use os comandos:**
