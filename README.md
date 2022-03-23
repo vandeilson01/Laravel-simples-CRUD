@@ -12,11 +12,13 @@
 
 **Baixa projeto por GIT**
 
+```
 *git init*
 
 *git remote add origin https://github.com/vandeilson01/amar_assist.git*
 
 *git pull origin master*
+```
 
 ## 🛠️ Abrir e rodar o projeto
 
@@ -28,8 +30,9 @@
 
 #instalação do composer no projeto:
 
-
+```
 *php composer install*
+```
 
 
 **Para a atualização das pastas do composer também pode-se utilizar os comandos:**
