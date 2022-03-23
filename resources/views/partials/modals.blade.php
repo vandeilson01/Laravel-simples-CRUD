@@ -22,13 +22,13 @@
          
         </div>
         <div class="form-group">
-          <label for="cep">CEP</label>
-          <input type="text" class="form-control" id="cep" name="cep" placeholder="000000-00" required>
+          <label for="phone">Telefone</label>
+          <input type="text" class="form-control" id="phone" name="phone" placeholder="(DDD) 0 1234-5678" required>
          
         </div>
         <div class="form-group">
-          <label for="phone">Telefone</label>
-          <input type="text" class="form-control" id="phone" name="phone" placeholder="(DDD) 0 1234-5678" required>
+          <label for="cep">CEP</label>
+          <input type="text" class="form-control" id="cep" name="cep" placeholder="000000-00" required>
          
         </div>
         <div class="form-group">
@@ -90,13 +90,13 @@
          
         </div>
         <div class="form-group">
-          <label for="cep">CEP</label>
-          <input type="text" class="form-control" id="cep" name="cep" placeholder="000000-00" required>
+          <label for="phone">Telefone</label>
+          <input type="text" class="form-control" id="phone" name="phone" placeholder="(DDD) 0 1234-5678" required>
          
         </div>
         <div class="form-group">
-          <label for="phone">Telefone</label>
-          <input type="text" class="form-control" id="phone" name="phone" placeholder="(DDD) 0 1234-5678" required>
+          <label for="cep">CEP</label>
+          <input type="text" class="form-control" id="cep" name="cep" placeholder="000000-00" required>
          
         </div>
         <div class="form-group">
