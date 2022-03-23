@@ -63,7 +63,7 @@ DB_PASSWORD=
 ```
 
 
-**Na raiz esta o a tabela do banco de dados(data_users.sql) onde você pode gerar a tabela do projeto por importação em seu banco de dados.**
+**Na raiz esta a tabela do banco de dados(data_users.sql) onde você pode gerar a tabela do projeto por importação em seu banco de dados.**
 
 
 **Caso queira gerar valores fictícios na tabela use o comando:**
