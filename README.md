@@ -5,11 +5,7 @@
 
 ## :hammer: Funcionalidades do projeto
 
-- `Funcionalidade 1`: descrição da funcionalidade 1
-- `Funcionalidade 2`: descrição da funcionalidade 2
-- `Funcionalidade 2a`: descrição da funcionalidade 2a relacionada à funcionalidade 2
-- `Funcionalidade 3`: descrição da funcionalidade 3
-
+- `Funcionalidade 1`: Este projeto é um CRUD simples realizado pelo framework Laravel da linguagem PHP.
 
 
 ## 📁 Acesso ao projeto
@@ -18,7 +14,7 @@
 
 ## 🛠️ Abrir e rodar o projeto
 
-**Apresente as instruções necessárias para abrir e executar o projeto**
+**Siga as instruções abaixo para execução.**
 
 Opa, como vai ? :)
 
