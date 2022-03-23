@@ -5,7 +5,7 @@
 
 ## :hammer: Funcionalidades do projeto
 
-- `Funcionalidade`: Este projeto é um CRUD simples realizado pelo framework Laravel da linguagem PHP utilizado para inserção, delete e modificação de dados de usuários com informações limitadas.
+ Este projeto é um CRUD simples realizado pelo framework Laravel da linguagem PHP utilizado para inserção, delete e modificação de dados de usuários com informações limitadas.
 
 
 ## 📁 Acesso ao projeto
