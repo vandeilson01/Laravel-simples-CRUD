@@ -10,7 +10,7 @@
 
 ## 📁 Acesso ao projeto
 
-**Baixa projeto por GIT**
+**Baixar projeto por GIT**
 
 ```
 $ git init
