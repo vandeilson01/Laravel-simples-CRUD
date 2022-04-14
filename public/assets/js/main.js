@@ -1,13 +1,8 @@
-
-let option = '';
-
 var Main = {
 
     Init:function(){
 
-
         $(document).on('click', '.edit', function(e){
-            
 
             $.ajax({
                 type: 'POST', 
@@ -25,14 +20,15 @@ var Main = {
         
                         $("form[name='edituser'] #id").val($(this).attr('data-id'));
                         $("form[name='edituser'] #name").val(json.name);
+                        $(".modal-title").text(json.name);
+                        $("form[name='edituser'] #cpf").val(json.cpf);
                         $("form[name='edituser'] #email").val(json.email);
+                        $("form[name='edituser'] #born").val(json.born);
                         $("form[name='edituser'] #phone").val(json.phone);
                         $("form[name='edituser'] #cep").val(json.cep);
                         $("form[name='edituser'] #province").val(json.province);
-                        $("form[name='edituser'] #city").val(json.city);
-                        $("form[name='edituser'] #district").val(json.district);
-                        $("form[name='edituser'] #number").val(json.number);
-                        $("form[name='edituser'] #complemet").val(json.complemet);
+                        $("form[name='edituser'] .city").text(json.city);
+                        $("form[name='edituser'] #address").val(json.address);
     
                         $('#editUser').modal('show');
         
@@ -51,7 +47,7 @@ var Main = {
 
         });
      
-        $("form[name='pdfreports']").submit(function(event){
+        $("form[name='edituser']").submit(function(event){
         
             event.preventDefault();
     
@@ -61,14 +57,13 @@ var Main = {
                 data:{ 
                     id: $("form[name='edituser'] #id").val(json.id),
                     name: $("form[name='edituser'] #name").val(json.name),
+                    cpf: $("form[name='edituser'] #cpf").val(json.cpf),
                     email: $("form[name='edituser'] #email").val(json.email),
-                    email: $("form[name='edituser'] #phone").val(json.phone),
-                    cep: $("form[name='edituser'] #cep").val(json.cep),
+                    born: $("form[name='edituser'] #born").val(json.born),
+                    phone: $("form[name='edituser'] #phone").val(json.phone),
                     province: $("form[name='edituser'] #province").val(json.province),
                     city: $("form[name='edituser'] #city").val(json.city),
-                    district: $("form[name='edituser'] #district").val(json.district),
-                    number: $("form[name='edituser'] #number").val(json.number),
-                    complemet: $("form[name='edituser'] #complemet").val(json.complemet),
+                    address: $("form[name='edituser'] #address").val(json.address),
                 },
                 dataType: 'JSON',
                 success: function (result) {
@@ -171,7 +166,8 @@ var Main = {
 
 
 
-        
+
+//capturando POSTS Ajax.php
 $(function(){
 
     clicked = false;
@@ -216,8 +212,6 @@ $(function(){
 
                     if(!data.error){
 
-                        $('.ui-datepicker-current-day').trigger('click');
-
                         if(data.reloadUsers){
 
                             Swal.close();
@@ -230,8 +224,6 @@ $(function(){
                             if(data.reload && !data.alert){
 
                                 Reload();
-
-                                // Swal.close();
 
                                 $('.modal').css('display','none').removeClass('show')
 
@@ -268,8 +260,6 @@ $(function(){
 
                                     if(data.reloadSchedule){
 
-                                        // $('[]').trigger('change')
-                                    
                                     } else {
                                         window.location.reload();
                                         Swal.close();
@@ -277,8 +267,6 @@ $(function(){
                                         $('.modal-backdrop').remove()
                                     }
 
-
-                              
 
                                 });
 
@@ -320,97 +308,256 @@ $(function(){
         }
 
     });
+
+
+    //buscando cidade
+    $('select[name="province"]').on('change', function(){
+        if($(this).val().length > 0 && !clicked){
+            clicked = true;
+            let form = $(this).closest('form')
+            let tg = form.find('select[name="city"]')
+            $.ajax({
+                type: 'POST',
+                url: 'ajax/getCities',
+                data: {
+                    sigla: $(this).val()
+                },
+                dataType: 'json',
+                beforeSend: function(){
+                    tg.find('option').remove();
+                    tg.append('<option>Carregando...</option>').trigger('change');
+                },
+                success: function(data){
+                    clicked = false
+                    tg.find('option').remove()
+                    $.each(data, (i, value) => {
+                        tg.append('<option value="'+value.nome+'">'+value.nome+'</option>').trigger('change');
+                    })
+                }
+            })
+        }
+    })
+
+
+
 });
 
-    }
+}
+}
+
+let Init = () => {
+
+    /*
+    Verifica se é CPF
+
+    @see http://www.todoespacoonline.com/w/
+    */
+    function verifica_cpf(valor){
+
+        // Garante que o valor é uma string
+        valor = valor.toString();
+
+        // Remove caracteres inválidos do valor
+        valor = valor.replace(/[^0-9]/g, '');
+
+        // Verifica CPF
+        if ( valor.length === 11 ) {
+            return 'CPF';
+        } 
+        // Não retorna nada
+        else {
+            return false;
+        }
+
+    } // verifica_cpf_cnpj
+
+
+    //Multiplica dígitos vezes posições
+
+    function calc_digitos_posicoes(digitos, posicoes = 10, soma_digitos = 0) {
+
+        // Garante que o valor é uma string
+        digitos = digitos.toString();
+
+        // Faz a soma dos dígitos com a posição
+        // Ex. para 10 posições:
+        //   0    2    5    4    6    2    8    8   4
+        // x10   x9   x8   x7   x6   x5   x4   x3  x2
+        //   0 + 18 + 40 + 28 + 36 + 10 + 32 + 24 + 8 = 196
+
+        for(var i = 0; i < digitos.length; i++){
+            // Preenche a soma com o dígito vezes a posição
+            soma_digitos = soma_digitos + (digitos[i] * posicoes);
+
+            // Subtrai 1 da posição
+            posicoes--;
+
+            // Parte específica para CNPJ
+            // Ex.: 5-4-3-2-9-8-7-6-5-4-3-2
+            if (posicoes < 2) {
+            // Retorno a posição para 9
+                posicoes = 9;
+            }
+        }
+
+        // Captura o resto da divisão entre soma_digitos dividido por 11
+        // Ex.: 196 % 11 = 9
+        soma_digitos = soma_digitos % 11;
+
+        // Verifica se soma_digitos é menor que 2
+        if (soma_digitos < 2){
+            // soma_digitos agora será zero
+            soma_digitos = 0;
+        } else {
+            // Se for maior que 2, o resultado é 11 menos soma_digitos
+            // Ex.: 11 - 9 = 2
+            // Nosso dígito procurado é 2
+            soma_digitos = 11 - soma_digitos;
+        }
+
+        // Concatena mais um dígito aos primeiro nove dígitos
+        // Ex.: 025462884 + 2 = 0254628842
+        var cpf = digitos + soma_digitos;
+
+        // Retorna
+        return cpf;
+
+    } 
+
+    //Valida CPF
+    function valida_cpfs(valor){
+
+        // Garante que o valor é uma string
+        valor = valor.toString();
+
+        // Remove caracteres inválidos do valor
+        valor = valor.replace(/[^0-9]/g, '');
+
+
+        // Captura os 9 primeiros dígitos do CPF
+        // Ex.: 02546288423 = 025462884
+        var digitos = valor.substr(0, 9);
+
+        // Faz o cálculo dos 9 primeiros dígitos do CPF para obter o primeiro dígito
+        var novo_cpf = calc_digitos_posicoes(digitos);
+
+        // Faz o cálculo dos 10 dígitos do CPF para obter o último dígito
+        var novo_cpf = calc_digitos_posicoes(novo_cpf, 11);
+
+        // Verifica se o novo CPF gerado é idêntico ao CPF enviado
+
+        if(novo_cpf === valor){
+            // CPF válido
+            return true;
+            } else {
+            // CPF inválido
+            return false;
+        }
+    } 
+
+
+
+    //Valida o CPF 2
+
+    function valida_cpf(valor) {
+
+        // Verifica se é CPF ou CNPJ
+        var valida = verifica_cpf(valor);
+
+        // Garante que o valor é uma string
+        valor = valor.toString();
+
+        // Remove caracteres inválidos do valor
+        valor = valor.replace(/[^0-9]/g, '');
+
+
+        // Valida CPF
+        if (valida === 'CPF') {
+            // Retorna true para cpf válido
+            return valida_cpfs(valor);
+            } 
+
+            // Não retorna nada
+            else {
+            return false;
+        }
+
+    } 
+
+
+    function formata_cpf(valor) {
+
+        // O valor formatado
+        var formatado = false;
+
+        // Verifica se é CPF ou CNPJ
+        var valida = verifica_cpf(valor);
+
+        // Garante que o valor é uma string
+        valor = valor.toString();
+
+        // Remove caracteres inválidos do valor
+        valor = valor.replace(/[^0-9]/g, '');
+
+
+        // Valida CPF
+        if (valida === 'CPF') {
+
+            // Verifica se o CPF é válido
+            if (valida_cpf(valor)) {
+
+                // Formata o CPF ###.###.###-##
+                formatado  = valor.substr(0,3) + '.';
+                formatado += valor.substr(3,3) + '.';
+                formatado += valor.substr(6,3) + '-';
+                formatado += valor.substr(9,2) + '';
+
+            }
+
+        }
+
+        return formatado;
+
+    } 
+
+
+    $(function(){
+
+    // Aciona a validação ao sair do input
+        $('.cpf').blur(function(){
+
+            // O CPF ou CNPJ
+            var cpf = $(this).val();
+
+            // Testa a validação
+            if (valida_cpf(cpf) ){
+
+                formata_cpf(cpf);
+
+            } else {
+                Swal.fire({
+
+                    title: 'Erro!',
+
+                    icon: 'error',
+
+                    text: 'CPF inválido!',
+
+                });
+            }
+
+        });
+
+    });
+
+
 }
 
 
+
+//iniciando
+Init();
 Main.Init();
 
-
-
-$(document).ready(function() {
-
-
-
-    function limpa_formulário_cep() {
-        $("input[id='complement']").val("");
-        $("input[id='address']").val("");
-        $("input[id='citys']").val("");
-        $("input[id='provinces']").val("");
-        // $("input[id='ibge']").val("");
-    }
-    
-    //Quando o campo cep perde o foco.
-    // $("input[id='cep']").on('click',function() {
-    // });
-    $("input[id='cep']").blur(function() {
-    
-    
-    var cep = $(this).val().replace(/\D/g, '');
-    
-    if (cep != "") {
-    
-        var validacep = /^[0-9]{8}$/;
-        
-        if(validacep.test(cep)) {
-        
-            $("input[id='complement']").val("...");
-            $("input[id='address']").val("...");
-            $("input[id='city']").val("...");
-            $("input[id='province']").val("...");
-            // $("input[id='ibge']").val("...");
-            
-            //Consulta o webservice viacep.com.br/
-            $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
-        
-                if (!("erro" in dados)) {
-                    $("input[id='complement']").val(dados.logradouro);
-                    $("input[id='district']").val(dados.bairro);
-                    $("input[id='city']").val(dados.localidade);
-                    $("input[id='province']").val(dados.uf);
-                    // $("input[id='ibge']").val(dados.ibge);
-                }
-                else {
-                    limpa_formulário_cep();
-                    Swal.fire({
-                
-                        title: 'Erro!',
-                        
-                        icon: 'error',
-                        
-                        text: 'CEP não encontrado!',
-                    
-                    });
-                }
-            });
-        }else {
-                //cep é inválido.
-                limpa_formulário_cep();
-                Swal.fire({
-                
-                    title: 'Erro!',
-                    
-                    icon: 'error',
-                    
-                    text: 'Formato de CEP inválido!',
-                
-                });
-            
-        }
-        }else {
-            //cep sem valor, limpa formulário.
-                limpa_formulário_cep();
-        }
-    });
-});
-// $(function () {
-//     var nua = navigator.userAgent
-//     var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
-//     if (isAndroid) {
-//         $('select.form-control').removeClass('form-control').css('width', '100%')
-//     }
-// })
 
 

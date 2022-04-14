@@ -1,9 +1,6 @@
 @php
-
     use App\Http\Controllers\Teste;
-    
 @endphp
-
 
 <section class="teste">
     <div class="container">
@@ -14,7 +11,7 @@
                 <div class="table-wrapper mt-5">
                     <div class="table-title">
                         <div class="row">
-                            <div class="col-md-8"><h2>Teste Amar Assits</h2></div>
+                            <div class="col-md-8"><h2>Cadastro</h2></div>
 
                             
                             <div class="col-md-4 mb-4 mt-4">
@@ -27,9 +24,11 @@
                     <table class="table table-striped table-hover table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>E-mail</th>
+                                <th>#ID</th>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Email</th>
+                                <th>Data de nascimento</th>
                                 <th>Telefone</th>
                                 <th>Ações</th>
                             </tr>
@@ -39,8 +38,14 @@
                             <tr>
                                 <td>{{ $row->id }}</td>
                                 <td>{{ $row->name }}</td>
+                                <td>{{ $row->cpf }}</td>
                                 <td>{{ $row->email }}</td>
-                                <td>{{ $row->phone }}</td>
+                                <td>{{ date('d/m/Y', strtotime($row->born)) }}</td>
+                                @php 
+
+                                    $phone = "(".substr($row->phone, -10, -8) . ") " . substr($row->phone, -7, -2) . "-" . substr($row->phone, -4); 
+                                @endphp
+                                <td>{{ $phone }}</td>
                                
                                 <td>
                                     <button data-id="{{ $row->id }}" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>

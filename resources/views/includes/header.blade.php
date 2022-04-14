@@ -1,7 +1,5 @@
 @php
-
     use App\Http\Controllers\Teste;
-    
 @endphp
 <!DOCTYPE html>
 <html>
@@ -12,7 +10,6 @@
         <meta name="description" content="">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="Cache-Control" content="no-store" />
-        <!-- <meta http-equiv="X-Frame-Options" content="deny"> -->
         <title>{{ $title }}</title>
         <script>
             
@@ -26,21 +23,13 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
     </head>
     <body{!! ($section !== 0) ? ' class="config open"' : '' !!}>
         <main>
-        @if(!$min)
-        <header>
-
-            
-
-        </header>
-        @endif
+       

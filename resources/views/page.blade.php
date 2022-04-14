@@ -1,3 +1,7 @@
+<?php 
+    #Redirecionamento global
+    #motando view
+?>
 @if(is_array($page))
     @foreach($page as $key => $item)
         @if(isset($rank[$key]) && $rank[$key])

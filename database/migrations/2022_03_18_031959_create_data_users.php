@@ -15,16 +15,14 @@ class CreateDataUsers extends Migration
     {
         Schema::create('data_users', function (Blueprint $table) {
             $table->id();
-            $table->text('name')->nullable();
-            $table->text('email')->nullable();
-            $table->text('phone')->nullable();
-            $table->text('cep')->nullable();
+            $table->string('name');
+            $table->string('cpf');
+            $table->string('email')->unique();
+            $table->date('born');
+            $table->string('phone');
             $table->text('city')->nullable();
             $table->text('province')->nullable();
-            $table->text('number')->nullable();
-            $table->text('district')->nullable();
-            $table->text('complemet')->nullable();
-            $table->text('type')->nullable();
+            $table->text('address')->nullable();
             $table->text('status')->nullable();
             $table->timestamps();
         });

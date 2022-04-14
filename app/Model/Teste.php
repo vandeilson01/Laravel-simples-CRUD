@@ -13,12 +13,17 @@ class Teste extends Model
     protected $fillable = [
         'id',
         'name' ,
+        'cpf' ,
         'email',
+        'born',
         'phone',
-        'cep',
+        'province',
+        'city',
+        'address',
         'status',
-        'type',
         'created_at',
         'updated_at',
     ];
+
+
 }
