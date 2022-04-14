@@ -36,8 +36,12 @@ $ php composer install
 $ cp .env.example .env
 $ php artisan key:generate
 ```
+<h2> 
+	Importe na sua base de dados o arquivo regions.sql que esta na raiz do projeto para gerar as tabelas de cidades e estados brasileiros:**
+</h2>
 
-**Para gerar a tabela na sua base de dados use o comando:**
+
+**Para gerar a tabela de úsuarios na sua base de dados use o comando:**
 
 
 ```
