@@ -45,7 +45,7 @@ $ cp .env.example .env
 $ php artisan key:generate
 ```
 
-
+<!-- 
 **Ainda no arquivo .env configure a conexão no seu banco de dados local:**
 
 ```
@@ -60,7 +60,7 @@ DB_DATABASE=data_base
 DB_USERNAME=root
 
 DB_PASSWORD=
-```
+``` -->
 
 
 **Na raiz esta a tabela do banco de dados(data_users.sql) onde você pode gerar a tabela do projeto por importação em seu banco de dados.**
