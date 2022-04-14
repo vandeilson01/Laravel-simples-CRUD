@@ -1,5 +1,5 @@
 <h1 align="center"> 
-	🚧  Crud 🚀 Concluído!  🚧
+	 Crud 🚀 Concluído!  
 </h1>
 
 
@@ -30,47 +30,25 @@ $ git pull origin master
 $ php composer install
 ```
 
-
-**Para a atualização das pastas do composer também pode-se utilizar os comandos:**
-
-```
-$ php composer install 
-$ composer dump-autoload
-```
-
-**Para a iniciação e configuração do arquivo de configuração .env e chave do projeto use os comandos:**
+**Iniciação e configuração do arquivo de configuração .env e chave do projeto use os comandos:**
 
 ```
 $ cp .env.example .env
 $ php artisan key:generate
 ```
 
-<!-- 
-**Ainda no arquivo .env configure a conexão no seu banco de dados local:**
+**Para gerar a tabela na sua base de dados use o comando:**
+
 
 ```
-DB_CONNECTION=mysql
-
-DB_HOST=localhost
-
-DB_PORT=3306
-
-DB_DATABASE=data_base
-
-DB_USERNAME=root
-
-DB_PASSWORD=
-``` -->
-
-
-**Na raiz esta a tabela do banco de dados(data_users.sql) onde você pode gerar a tabela do projeto por importação em seu banco de dados.**
-
+$ php artisan migrate
+```
 
 **Caso queira gerar valores fictícios na tabela use o comando:**
 
 
 ```
-$ php artisan seed:db
+$ php artisan db:seed
 ```
 
 <h2> 
