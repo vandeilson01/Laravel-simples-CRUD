@@ -37,7 +37,7 @@ $ cp .env.example .env
 $ php artisan key:generate
 ```
 <h2> 
-	Importe na sua base de dados o arquivo regions.sql que esta na raiz do projeto para gerar as tabelas de cidades e estados brasileiros:**
+	Importe na sua base de dados o arquivo regions.sql que esta na raiz do projeto para gerar as tabelas de cidades e estados brasileiros:
 </h2>
 
 
