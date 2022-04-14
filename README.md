@@ -15,7 +15,7 @@
 ```
 $ git init
 
-$ git remote add origin https://github.com/vandeilson01/amar_assist.git
+$ git remote add origin https://github.com/vandeilson01/to_start.git
 
 $ git pull origin master
 ```
