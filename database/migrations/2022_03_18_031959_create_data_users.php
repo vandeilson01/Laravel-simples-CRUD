@@ -17,7 +17,7 @@ class CreateDataUsers extends Migration
             $table->id();
             $table->string('name');
             $table->string('cpf');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->date('born');
             $table->string('phone');
             $table->text('city')->nullable();

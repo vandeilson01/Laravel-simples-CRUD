@@ -10,27 +10,6 @@ Route::get('/', function(){
     return redirect('/teste');
 });
 
-Route::get('/teste/{section}/{id}', function($section,  $id){
-    
-    return view('page', [
-        'page' => 'teste',
-        'title' => 'Teste',
-        'min' => false,
-        'section' => $section,
-        'prefix' => 'edit-',
-        'id' => $id
-    ]);
-});
-
-Route::get('/teste/{section}', function($section){
-    return view('page', [
-        'page' => 'teste',
-        'title' => 'Teste',
-        'min' => false,
-        'section' => $section
-    ]);
-});
-
 Route::get('/{page}', function($page){
 
     if('teste' == $page ):

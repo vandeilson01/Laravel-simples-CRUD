@@ -1,5 +1,5 @@
 <?php 
-    #Redirecionamento global
+    #Direcionamento global
     #motando view
 ?>
 @if(is_array($page))

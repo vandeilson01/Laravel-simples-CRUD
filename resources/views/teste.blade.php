@@ -42,13 +42,12 @@
                                 <td>{{ $row->email }}</td>
                                 <td>{{ date('d/m/Y', strtotime($row->born)) }}</td>
                                 @php 
-
                                     $phone = "(".substr($row->phone, -10, -8) . ") " . substr($row->phone, -7, -2) . "-" . substr($row->phone, -4); 
                                 @endphp
                                 <td>{{ $phone }}</td>
                                
                                 <td>
-                                    <button data-id="{{ $row->id }}" class="edit" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
+                                    <button data-id="{{ $row->id }}" class="edit text-info" title="Editar" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></button>
                                     <button  class="delete" data-id="{{ $row->id }}" title="Deletar" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
                                 </td>
                             </tr>
