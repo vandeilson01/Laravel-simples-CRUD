@@ -9,6 +9,7 @@
 <h3>🎨 Layout</h3>
 
 **Página principal**
+<br/>
 <img src="https://user-images.githubusercontent.com/60020510/163507851-8d95bf2c-a9b4-4362-af41-b7b25afa1f2f.PNG">
 
 <h3>💨 Banco de dados</h3>
