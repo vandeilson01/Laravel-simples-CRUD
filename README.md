@@ -6,20 +6,19 @@
 ## :hammer: Funcionalidades do projeto
 
  Este projeto é um CRUD simples realizado pelo framework Laravel da linguagem PHP utilizado para inserção, delete e modificação de dados de usuários com informações limitadas.
+<h3>🎨 Layout</h3>
 
-##🎨 Layout
-
-**Página prinmcipal**
+**Página principal**
 <img src="https://user-images.githubusercontent.com/60020510/163507851-8d95bf2c-a9b4-4362-af41-b7b25afa1f2f.PNG">
 
-##💨 Banco de dados
+<h3>💨 Banco de dados</h3>
 
 <img src="https://user-images.githubusercontent.com/60020510/163507952-fca3550b-582b-4ad6-baa0-b631abd8d40f.PNG">
 
 <img src="https://user-images.githubusercontent.com/60020510/163508065-77e65ba8-df01-44f1-9cfc-59c86e9777d4.PNG">
 
 
-## 📁 Acesso ao projeto
+**📁 Acesso ao projeto**
 
 **Baixar projeto por GIT**
 
