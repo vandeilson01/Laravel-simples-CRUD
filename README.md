@@ -40,7 +40,7 @@ $ git pull origin master
 **Instalação do composer no projeto:**
 
 ```
-$ omposer install
+$ composer install
 ```
 
 **Iniciação e configuração do arquivo de configuração .env e chave do projeto use os comandos:**
