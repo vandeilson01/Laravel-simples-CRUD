@@ -2,7 +2,9 @@
 	 Crud 🚀 Concluído!  
 </h1>
 
-
+- Item 1
+- Item 2
+- Item 3
 ## :hammer: Funcionalidades do projeto
 
  Este projeto é um CRUD simples realizado pelo framework Laravel da linguagem PHP utilizado para inserção, delete e modificação de dados de usuários com informações limitadas.
