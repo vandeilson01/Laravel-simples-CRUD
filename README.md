@@ -1,5 +1,5 @@
 <h1 align="center"> 
-	 Crud 🚀 Concluído!  
+	 Crud 🚀
 </h1>
 
 ## :hammer: Funcionalidades do projeto
